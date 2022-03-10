@@ -27,11 +27,13 @@ module.exports = {
             loader: require.resolve("babel-loader"),
         },
         {
+            // make sure it checks .css files and using "style-loader", "css-loader" for them
             test: /\.css$/,
             use: ["style-loader", "css-loader"],
         },
         {
-            test: /\.png|svg|jpg|gif$/,
+            // make sure all .png and ... files will be built using file-loader 
+            test: /\.png|svg|jpg|gif|jpeg$/,
             use: ["file-loader"],
         },
         ],

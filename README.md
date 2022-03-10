@@ -7,13 +7,13 @@ Init project: creates package.json
 npm init -y
 ```
 
-# React
+## React
 Install react and react-dom
 ```
 npm install react react-dom
 ```
 
-# Babel
+## Babel
 - @babel/core - helps to use modern javascript code that will automatically transpilled to older code for older browses
 - @babel/preset-react - takes jsx code and turns it into vanilla ract
 - babel-loader - connects babel and webpack
@@ -21,7 +21,7 @@ npm install react react-dom
 npm install @babel/core @babel/preset-env @babel/preset-react babel-loader
 ```
 
-# Webpack 
+## Webpack 
 Combines all the code into one file
 ```
 npm install webpack webpack-cli webpack-dev-server
@@ -114,7 +114,7 @@ index.html
 </html>
 ```
 
-# Modify package.json
+## Modify package.json
 - webpack-dev-server - open up a development server
 - --hot - automatically update the server with changes
 - --open - opens new tab automatically
@@ -129,8 +129,29 @@ index.html
 },
 ```
 
-# Run project
+## Run project
 Project opens at http://localhost:8080/
 ```
 npm start
+```
+
+# Adding styles to a project
+These allows to use styles from .css files in components
+```
+npm install style-loader css-loader
+```
+
+## File loader
+In order to be able to add files to project you need this
+- --dev is required only for local builds but not for real site because it will use generated bundle
+```
+npm install --dev file-loader
+```
+Webpack config
+```
+{
+    // make sure all .png and ... files will be built using file-loader 
+    test: /\.png|svg|jpg|gif|jpeg$/,
+    use: ["file-loader"],
+},
 ```
